@@ -43,8 +43,10 @@ public abstract class MyBehaviour
     //终止逻辑仅在状态变为非 Running 且非 Invalid 时触发。
     //改进关键：
 
-    
 
+    //Tick() 方法的设计：
+    //1. 通过状态机来管理节点的生命周期，确保每个节点在正确的时机执行相应的操作。
+    //2. 对保护类型的OnUpdate方法进行外部调用。
     public EStatus Tick()
     {
         if (status == EStatus.Invalid)

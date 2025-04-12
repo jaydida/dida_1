@@ -93,4 +93,17 @@ public class Parallel : Composite
         return allCompleted ? EStatus.Failure : EStatus.Runing;
 
     }
+
+
+    protected override void OnExit()
+    {
+        foreach (var child in children)
+        {
+            if (child.IsRuning)
+            {
+                child.Abort();
+            }
+           
+        }
+    }
 }
