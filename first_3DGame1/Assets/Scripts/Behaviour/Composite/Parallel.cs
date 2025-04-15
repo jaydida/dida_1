@@ -22,6 +22,7 @@ public class Parallel : Composite
 
     public override void OnInitialize()
     {
+        status = EStatus.Invalid;
         //初始化子节点的状态
         childStatus = new List<EStatus>();
         for (int i = 0; i < children.Count; i++)

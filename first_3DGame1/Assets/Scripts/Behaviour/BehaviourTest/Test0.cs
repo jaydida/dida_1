@@ -15,7 +15,8 @@ public class Test0 : MonoBehaviour
     {
         builder.EntryNode()
                     .Repeat(3)
-                      .Sequence()
+                      //.Sequence()
+                      .Selector()
                          .MyDebug("第一次MyDebug")
                          .MyDebug("第二次MyDebug")
                          .MyDebug("第三次MyDebug")

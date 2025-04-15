@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Inverter : Decorator
 {
+    public override void OnInitialize()
+    {
+        status = EStatus.Invalid;
+        child.OnInitialize();
+    }
+
     //只对成功与失败者两个节点状态进行取反。
     protected override EStatus OnUpdate()
     {

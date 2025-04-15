@@ -14,6 +14,11 @@ public class Monitor : Parallel
     {
     }
 
+    public override void OnInitialize()
+    {
+        base.OnInitialize();
+    }
+
 
     public void SetCondition(MyBehaviour condition)
     {

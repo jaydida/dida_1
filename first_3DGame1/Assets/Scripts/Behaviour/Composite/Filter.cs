@@ -39,6 +39,13 @@ public class Filter : Composite
 
     public override void OnInitialize()
     {
+        status = EStatus.Invalid;
+        currentChild = children.First;
+        for (int i = 0; i < children.Count; i++)
+        {
+            currentChild.Value.OnInitialize();
+            currentChild = currentChild.Next;
+        }
         currentChild = children.First;
     }
 
