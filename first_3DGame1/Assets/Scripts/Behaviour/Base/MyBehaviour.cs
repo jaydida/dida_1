@@ -26,7 +26,7 @@ public abstract class MyBehaviour
     }
 
     //当进入该节点时，会触发一次该状态
-    protected virtual void OnInitializa(){}
+    public virtual void OnInitialize(){}
 
     //当节点运行时，会一直触发该状态
     protected abstract EStatus OnUpdate();
@@ -51,7 +51,7 @@ public abstract class MyBehaviour
     {
         if (status == EStatus.Invalid)
         {
-            OnInitializa();
+            OnInitialize();
             status = EStatus.Runing;
         }
         if (status == EStatus.Runing)

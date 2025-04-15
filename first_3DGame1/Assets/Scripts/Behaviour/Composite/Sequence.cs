@@ -7,8 +7,15 @@ public class Sequence : Composite
     protected LinkedListNode<MyBehaviour> currentChild;//当前运行的子节点
     public MyBehaviour CurrentChild => currentChild?.Value;//只读属性，避免外部修改，?空值运算符，为空的话不在报错，返回null
 
-    protected override void OnInitializa()
+    public override void OnInitialize()
     {
+        status = EStatus.Invalid;
+        currentChild = children.First;
+        for (int i = 0; i < children.Count; i++)
+        {
+            currentChild.Value.OnInitialize();
+            currentChild = currentChild.Next;
+        }
         currentChild = children.First;
     }
 

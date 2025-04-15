@@ -37,7 +37,7 @@ public class Filter : Composite
         children.AddLast(Action);
     }
 
-    protected override void OnInitializa()
+    public override void OnInitialize()
     {
         currentChild = children.First;
     }

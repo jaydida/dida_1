@@ -20,7 +20,7 @@ public class Parallel : Composite
         this.parallelFailure = parallelFailure;
     }
 
-    protected override void OnInitializa()
+    public override void OnInitialize()
     {
         //初始化子节点的状态
         childStatus = new List<EStatus>();

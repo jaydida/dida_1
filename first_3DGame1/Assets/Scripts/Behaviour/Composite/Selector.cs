@@ -7,7 +7,7 @@ public class Selector : Composite
     protected LinkedListNode<MyBehaviour> currentChild;//当前运行的子节点
     public MyBehaviour CurrentChild => currentChild?.Value;//只读属性，避免外部修改，?空值运算符，为空的话不在报错，返回null
 
-    protected override void OnInitializa()
+    public override void OnInitialize()
     {
         currentChild = children.First;
     }
